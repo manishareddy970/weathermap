@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2></h2>
+     <form>
+    <input type="text" placeholder="enter_the_city">
+    <input type="submit" >
+
+    </form>
+    <script>
+
+       var a=document.getElementsByTagName("h2")
+       a[0].innerText="Findout The Weather Of City";
+       a[0].style.textAlign="center";
+      var b=document.forms;
+    //   console.log(b[0]);
+    
+    var imgg=document.createElement("img")
+    document.body.appendChild("imgg")
+         imgg.setAttribute("src","./summer.jpeg")
+
+       b[0].addEventListener("submit",function(e){
+          e.preventDefault();
+         console.log(e);
+          
+         
+
+
+
+        var x="https://api.openweathermap.org/data/2.5/weather?q="
+        var y=e.target[0].value;
+        var z="&appid=01b5789dad21296593251d5e37536e93"
+        
+            var dup=x+y+z;
+         
+            fetch(dup,{
+         method:"get"
+        }).then((val)=>{
+        return val.json()
+        }).then((val)=>{
+         console.log(val.main.temp)
+         document.write(val.main.temp)
+        })
+        })
+    
+
+       
+       
+       
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    </script>
+</body>
+</html>
